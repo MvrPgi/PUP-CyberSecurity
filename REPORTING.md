@@ -125,7 +125,7 @@ Problem 2: “I downloaded a file, but how do I know if it’s authentic or tamp
 4. Verify
   openssl dgst -sha256 update.txt
 
-  # Compare the checksums
+   Compare the checksums
 
 EXPLANATION
   - The `openssl dgst -sha256` command computes the SHA-256 hash of the file, which serves as a digital fingerprint.
@@ -186,4 +186,5 @@ EXPLANATION
    - https://docs.openssl.org/master/man1/openssl-enc
    - https://www.openssl.org/docs/manmaster/man1/openssl-dgst.html
    - https://stackoverflow.com/questions/7885785/using-openssl-to-get-the-certificate-from-a-server
+
 
