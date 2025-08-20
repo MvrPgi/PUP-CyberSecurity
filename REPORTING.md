@@ -21,7 +21,7 @@ OPENSSL ENGINES
 Installation Guide
 
 1. First of all OPENSSL is built in UNIX operating systems.
-2. So to check if OpenSSL is installed on your system, you can use the following command in the terminal:
+2. I am using kali linux virtual machine. So to check if OpenSSL is installed on your system, you can use the following command in the terminal:
 
 ```bash
 openssl version
@@ -29,11 +29,9 @@ openssl version
 3. If not installed, you can install OpenSSL using the package manager for your UNIX system. For example, on Ubuntu, you can use the following command:
 
   ```bash
-  sudo apt-get install openssl
+  sudo apt-get install --only-upgrade openssl
   ```
-
-  What is only-upgrade in downloading openssl?
-  - The `--only-upgrade` option only upgrades OpenSSL if it is already installed; it will not install OpenSSL if it is missing.
+  - The `--only-upgrade` option upgrades OpenSSL only if it is already installed; it will not install it if missing.
   - For most users, especially beginners, you should use `sudo apt-get install openssl` to ensure OpenSSL is installed even if it was not present before.
   - Use `--only-upgrade` only if you are sure OpenSSL is already installed and you want to avoid installing new packages.
 
@@ -43,8 +41,8 @@ Introduction
 
 man open
  - Manual for the open ssl and information about the tool
-
-openssl help
+man open
+ - Displays the manual page for OpenSSL commands and options
 - show the available commands
 openssl --version
 
@@ -71,7 +69,7 @@ With OpenSSL, you can quickly diagnose if a site is safe or misconfigured.
 
 Analyze
   s_client 
-    - acts as a web browser for the openSSL to interact with the website but only SSL/TLS handshakes
+    - simulates an SSL/TLS client to interact with the server, performing handshakes and allowing inspection of certificates and connection details
     - this is to connect to a server and show every details about the connection examples are certifications,ciphers, protocols.
 
   -connect expired.badssl.com:443
@@ -92,7 +90,7 @@ Analyze
 
   EXPLANATION
     /dev/null
-     - this is a special file that discard all data that might be uncessary or noisy
+     - this is a special file that discards all data that might be unnecessary or noisy
 
     | openssl x509 -noout -dates -subject -issuer
      - This is a command tool for X.509 certificates to filter out the essentials in reading a certificate.
@@ -140,7 +138,7 @@ EXPLANATION
 
 1.  Create a secret file
 
-  -We are gonna use the update.txt in the second problem for example you want to pass it to a friend securely.
+  -We will use the update.txt file created in Problem 2 as an example, demonstrating how to securely share it with a friend.
 
 
 2. Then we are gonna encrypt the file using openssl AES 256
@@ -186,5 +184,4 @@ EXPLANATION
    - https://docs.openssl.org/master/man1/openssl-enc
    - https://www.openssl.org/docs/manmaster/man1/openssl-dgst.html
    - https://stackoverflow.com/questions/7885785/using-openssl-to-get-the-certificate-from-a-server
-
 
